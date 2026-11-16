@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: regulatory-submission-tracker
+  data:
+    mongodb:
+      uri: ${MONGO_URI:mongodb://localhost:27017/regtracker}
+      auto-index-creation: true
+  mail:
+    host: ${MAIL_HOST:}
+    port: ${MAIL_PORT:587}
+    username: ${MAIL_USER:}
+    password: ${MAIL_PASS:}
+    properties:
+      mail.smtp.starttls.enable: true
+  async:
+    executor:
+      core-pool-size: 2
+      max-pool-size: 5
+
+aws:
+  region: ${AWS_REGION:us-east-1}
+  s3:
+    bucket: ${S3_BUCKET:reg-submissions-local}
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:supersecretkey32charsminimumhere!}
+    expiration-ms: 86400000
+
+logging:
+  level:
+    com.ivanjiang.regtracker: DEBUG
+    org.springframework.security: INFO
