@@ -5,6 +5,12 @@ spring:
   mail:
     host: ""
 
+de:
+  flapdoodle:
+    mongodb:
+      embedded:
+        version: 7.0.4
+
 app:
   jwt:
     secret: testSecretKeyForJwtSigningWhichIsLongEnough123456
